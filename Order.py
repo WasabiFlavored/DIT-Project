@@ -15,10 +15,10 @@ class Restaurant:
         self.menu_frame.grid(column= "0", row= "0", sticky= "new")
 
         self.food_frame = tk.Frame(root, width= "700", height= "700", bg= "darkgray")
-        self.food_frame.grid(column= "0", row= "0", sticky= "esw")
+        self.food_frame.grid(column= "0", row= "1", sticky= "nsew")
 
         self.price_frame = tk.Frame(root, width= "300", height= "800", bg= "black")
-        self.price_frame.grid(column= "2", row= "0", sticky= "nes")
+        self.price_frame.grid(column= "2", row= "0", rowspan= 2, sticky= "nes")
 
         self.appetisers_frame = tk.Frame(root, width= "700", height="700", bg= "green")
         self.main_frame = tk.Frame(root, width= "700", height="700", bg= "blue")
@@ -42,13 +42,13 @@ class Restaurant:
 
     def clear(self):
         self.appetisers_frame.grid_forget()
-        self.food_frame.grid_forget()
         self.main_frame.grid_forget()
         self.soups_frame.grid_forget()
         self.drinks_frame.grid_forget()
 
     def appetisers(self):
         self.clear()
+        self.appetisers_frame.grid(column="0", row="1", sticky="nsew")
         self.app_button.configure(state= "disabled", bg="darkgray")
         self.main_button.configure(state= "normal", bg= "white")
         self.soup_button.configure(state= "normal", bg= "white")
@@ -68,7 +68,7 @@ class Restaurant:
 
     def soup(self):
         self.clear()
-        self.soups_frame.grid(column= "0", row= "0", sticky= "esw")
+        self.soups_frame.grid(column= "0", row= "1", sticky= "nsew")
         self.soup_button.configure(state= "disabled", bg="darkgray")
         self.drink_button.configure(state= "normal", bg= "white")
         self.main_button.configure(state= "normal", bg= "white")
@@ -76,7 +76,7 @@ class Restaurant:
 
     def drinks(self):
         self.clear()
-        self.drinks_frame.grid(column= "0", row= "0", sticky= "esw")
+        self.drinks_frame.grid(column= "0", row= "1", sticky= "nsew")
         self.drink_button.configure(state= "disabled", bg= "darkgrey")
         self.soup_button.configure(state= "normal", bg= "white")
         self.main_button.configure(state= "normal", bg= "white")
