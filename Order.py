@@ -26,7 +26,12 @@ class Restaurant:
         self.drinks_frame = tk.Frame(root, width= "700", height="700", bg= "green")
         self.section1 = tk.Frame(self.main_frame, width="100", height="100", bg= "yellow")
 
-        self.section1 = tk.Frame(self.main_frame, width="100", height="100", bg="yellow")
+        self.section1 = tk.Frame(self.main_frame, width="175", height="175", bg="yellow")
+        self.section2 = tk.Frame(self.main_frame, width="175", height="175", bg="yellow")
+        self.section3 = tk.Frame(self.main_frame, width="175", height="175", bg="yellow")
+        self.section4 = tk.Frame(self.main_frame, width="175", height="175", bg="yellow")
+        self.section5 = tk.Frame(self.main_frame, width="175", height="175", bg="yellow")
+        self.section6 = tk.Frame(self.main_frame, width="175", height="175", bg="yellow")
 
         self.app_button = tk.Button(self.menu_frame, text= "Appetisers", command= self.appetisers)
         self.app_button.place(x= 80, y= 40)
@@ -63,7 +68,12 @@ class Restaurant:
         self.app_button.configure(state= "normal", bg= "white")
         self.main_frame.grid(column="0", row="1", sticky= "nsew")
         tk.Label(self.main_frame, text="Main Courses Section", bg="white", font=("Arial", 24)).pack(pady=50)
-        self.section1.place(x= 0, y= 0)
+        self.section1.grid(column="0", row="0")
+        self.section2.grid(column="0", row="1")
+        self.section3.grid(column="0", row="2")
+        self.section4.grid(column="1", row="0")
+        self.section5.grid(column="1", row="1")
+        self.section6.grid(column="1", row="2")
 
 
     def soup(self):
